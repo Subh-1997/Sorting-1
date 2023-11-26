@@ -1,4 +1,4 @@
-Merge sorted array
+1.Merge sorted array
 
 package leetcode;
 
@@ -29,3 +29,14 @@ private static void merge(int[] nums1, int m, int[] nums2, int n) {
 }
 }
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.Kth Smallest Element in the Array
+
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int kthsmallest(final List<Integer> A, int B) {
+        Collections.sort(A);
+        return A.get(B-1);
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.
