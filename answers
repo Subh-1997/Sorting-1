@@ -39,4 +39,52 @@ public class Solution {
     }
 }
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-3.
+3.Consecutive Array Elements
+
+class Solution{
+    public void quickSort(long arr[],int start,int end){
+        if(start>end){
+            return;
+        }
+        long pivot = arr[end];
+        int pi = partition(arr,pivot,start,end);
+        quickSort(arr,start,end-1);
+        quickSort(arr,start+1,end);
+    }
+    
+    public static int partition(long arr[],long pivot,int start,int end){
+        
+        int i=start;
+        int j=start;
+        
+        while(i < arr.length){
+            if(arr[i]<=pivot){
+                swap(arr,i,j);
+                i++;
+                j++;
+            }else{
+                i++;
+            }
+        }
+        return (j-1);
+    }
+    public static void swap(long arr[],int i,int j){
+        long temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    boolean areConsecutives(long arr[], int N)
+    {
+      int start = 0;
+      int end = N-1;
+      quickSort(arr,start,end);
+      
+      for(int i=1;i<arr.length;i++){
+          if(arr[i]!=arr[i-1]+1) return false;
+      }
+      return true;
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.
